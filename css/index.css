@@ -1,0 +1,115 @@
+@font-face {
+    font-family: "SF Pro Medium";
+    src: url('https://i4im-web.oss-cn-shanghai.aliyuncs.com/css/sf-pro-display.ttf'), url('https://i4im-web.oss-cn-shanghai.aliyuncs.com/css/sf-pro-display.eto')
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: block;
+    line-height: 1.5;
+    font-family: "SF Pro Medium" !important;
+    color: #1A051D;
+    font-size: 14px;
+    background: #fff;
+}
+
+input {
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+}
+
+select {
+    /* appearance:none;   
+  -moz-appearance:none;   
+  -webkit-appearance:none;
+  -ms-appearance:none; 
+  outline:none;      */
+    outline: none;
+    border: none;
+    -webkit-tap-highlight-color: #fff;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+.amole-btn {
+    padding: 6.5px 22px;
+    height: 34px;
+    text-align: center;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 17px;
+}
+
+.amole-btn.right {
+    float: right;
+}
+
+.amole-span.right {
+    float: right;
+}
+
+.margin-right45 {
+    margin-right: 45px;
+}
+
+.amole-btn {
+    padding: .12rem .4rem;
+    height: .68rem;
+    text-align: center;
+    font-size: .28rem;
+    cursor: pointer;
+    border-radius: .34rem;
+    white-space: nowrap;
+    -moz-user-select: none;
+    /* Firefox私有属性 */
+    -webkit-user-select: none;
+    /* WebKit内核私有属性 */
+    -ms-user-select: none;
+    /* IE私有属性(IE10及以后) */
+    -khtml-user-select: none;
+    /* KHTML内核私有属性 */
+    -o-user-select: none;
+    /* Opera私有属性 */
+    user-select: none;
+}
+
+.amole-btn:hover {
+    box-shadow: 0px 0px .1rem rgba(167, 171, 178, 0.3);
+}
+
+.amole-btn.large {
+    padding: .4rem .8rem;
+    font-size: .32rem;
+    border-radius: .6rem;
+}
+
+
+/* ywl定义清楚浮动的原子类 */
+
+.clear::after {
+    content: '.';
+    height: 0;
+    visibility: hidden;
+    display: block;
+    clear: both;
+}
+
+
+/*  正式的页面样式 */
+
+
+/*  正式的页面样式 end */
