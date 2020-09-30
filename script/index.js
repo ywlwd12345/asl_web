@@ -1,153 +1,209 @@
+var domain = "http://new.aishenglian.com/";
 
-  // ywl
-//弹出层出现时让页面不能继续滚动
-var a=function(e){
-  e.preventDefault();
+function renderLunbo() {
+    layui.use("laytpl", function() {
+        var laytpl = layui.laytpl;
+        var getTpl = lunbo.innerHTML;
+        var view = document.getElementById("lunboId");
+        $.ajax({
+            type: "GET",
+            url: domain + 'api/lunbo',
+            error: function(XMLHttpRequest, textStatus, errorThrown) {},
+            success: function(data) {
+                var noticData = data.lunbotu;
+                laytpl(getTpl).render(noticData, function(html) {
+                    view.innerHTML = html;
 
-}
-function disableBody(flag){
-  if(flag){
-    document.body.addEventListener('touchmove', a, { passive: false }); 
-  }else{
-    document.body.removeEventListener('touchmove',a); 
-}
-}
+                    var mySwiper = new Swiper('.swiper-container', {
+                        direction: 'horizontal', // 垂直切换选项
+                        loop: true, // 循环模式选项
+                        autoplay: true,
 
-
-  $(".nav-icon").on("touchstart", function (e) {
-    $(".pop").css({
-      display: "block"
-    })
-   
-    disableBody(true)
-  
-  });
- 
-  $(".pop-img").on("touchend", function (e) {
-    $(".pop").css({
-      display: "none"
-    })
-    disableBody(false)
-   
-  })
-
-  $(".pop a > span").on("click", function () {
-    var self = $(this)
-    $(".pop a > span").each(function (key, item) {
-      if (self.html() === $(this).html()) {
-        $(this).addClass("pop-underline")
-      } else {
-        $(this).removeClass("pop-underline")
-      }
-    })
-  })
-
-  function resetUnderline(src) {
-    $(".pop a > span").each(function (key, item) {
-      if ($(this).html()=== src) {
-        $(this).addClass("pop-underline")
-      } else {
-        $(this).removeClass("pop-underline")
-      }
-    })
-  }
-
-  
-  $('.foot-title').on("click", function () {
-    if($(this).find("img").attr("class")=="rotate-img"){
-      $(this).find("img").removeClass("rotate-img")
-      // $(this).next().removeClass('active').addClass('closed')
-      $(this).next('ul').slideToggle(500).parent().siblings().children('ul').hide(500)
-
-      $(this).find("img").addClass("rotate-img1")
-      $(this).parent().siblings().find("img").removeClass("rotate-img1")
-    }else{
-      $(this).find("img").removeClass("rotate-img1")
-      // $(this).next().css({display:"block"}).parent().siblings().find("ul").css({display:"none"})
-      // $(this).next().removeClass('closed').addClass('active')
-      $(this).next('ul').slideToggle(500).parent().siblings().children('ul').hide(500)
-      $(this).find("img").addClass("rotate-img")
-      $(this).parent().siblings().find("img").removeClass("rotate-img")
-    
-    }
-    
-
-    
-  })
+                        // 如果需要分页器
+                        pagination: {
+                            el: '.swiper-pagination',
+                            bulletActiveClass: 'my-bullet-active',
+                        },
 
 
 
-  // 解决移动端禁止浏览器强制缩放bug
-  window.onload=function () {  
-    onTwoFingers()       
-   }
-
-
-  //点击弹出框的链接后恢复初始化
-function getStartState(src){
-  $(".pop a").on("click",function(){
-    $(".pop").css({
-      display: "none"
-    })
-    disableBody(false)
-    if(src){
-      resetUnderline(src)
-    }
-    
-  })
-
-}
-//禁止缩放函数
-function onTwoFingers(){
-  document.addEventListener('touchstart',function (event) {  
-    if(event.touches.length>1){  
-         event.preventDefault();  
-     } 
- },{ passive: false })  
- var lastTouchEnd=0;  
- document.addEventListener('touchend',function (event) {  
-     var now=(new Date()).getTime();  
-     if(now-lastTouchEnd<=300){  
-         event.preventDefault();  
-     }  
-     lastTouchEnd=now;  
-}, { passive: false })  
-  
+                    })
+                });
+            }
+        });
+    });
 }
 
-// 控制默认样式表不更新
-// $(function(){
-//   $('head link').each(function(){
-//     let src= $(this).attr("href")+"?v="+new Date().getTime()
-//     $(this).attr("href",src)
-//   })
 
-// })
+function getNews() {
+    layui.use("laytpl", function() {
+        var laytpl = layui.laytpl;
+        var getTpl = newsList.innerHTML;
+        var view = document.getElementById("news-wrap");
+        $.ajax({
+            type: "GET",
+            data: {
+                typeid: localStorage.getItem('typeid'),
+                page: 1
+            },
+            url: domain + 'api/newslist',
+            error: function(XMLHttpRequest, textStatus, errorThrown) {},
+            success: function(data) {
+                var noticData = data.data.news
 
+                laytpl(getTpl).render(noticData, function(html) {
+                    view.innerHTML = html;
+                    clickNewsEvent()
 
-// 了解更多按钮跳转
-$(".href").on('click',function(){
-  window.location.href=window.location.origin+"/product-display/index.html"
-})
-
-// 导航logo跳转
-$(".logo").on('click',function(){
-  window.location.href=window.location.origin+"/index.html"
-})
-
-//联系我们跳转
-$(".banner .large").on('click',function(){
-  window.location.href=window.location.origin+"/contact-us/index.html"
-})
-
-//首页 联系我们跳转
-$("#btnSpec").on('click',function(){
-  window.location.href=window.location.origin+"/contact-us/index.html"
-})
+                });
+            }
+        });
+    });
+}
 
 
 
+function clickEvent() {
+    $(".typeid1").on("click", function() {
+
+        localStorage.setItem('typeid', 1)
+
+        window.location.href = "../html/news/index.html";
+
+        // getNews()
 
 
 
 
+    });
+
+    $(".typeid2").on("click", function() {
+
+        localStorage.setItem('typeid', 2)
+
+        window.location.href = "../html/news/index.html";
+
+        // getNews()
+
+
+
+
+    });
+
+    $(".typeid3").on("click", function() {
+
+        localStorage.setItem('typeid', 3)
+
+        window.location.href = "../html/news/index.html";
+
+        // getNews()
+
+
+
+
+    });
+
+}
+
+
+function clickNewsEvent() {
+
+    $(".news-panel").on("click", function(e) {
+        // console.log(e, 55566)
+        // console.log(, '狗')
+
+        var id = $(this).attr('data-id')
+        localStorage.setItem('id', id)
+
+        window.location.href = "../news-details/index.html"
+
+
+        // getNews()
+
+
+
+
+    });
+
+
+
+
+
+
+}
+
+
+function newsContent() {
+    layui.use("laytpl", function() {
+        var laytpl = layui.laytpl;
+        var getTpl = newsDetails.innerHTML;
+        var view = document.getElementById("body");
+        $.ajax({
+            type: "GET",
+            // data: {
+            //     id: localStorage.getItem('id'),
+
+            // },
+            url: domain + 'api/newsdetail/' + localStorage.getItem('id'),
+            error: function(XMLHttpRequest, textStatus, errorThrown) {},
+            success: function(data) {
+                var noticData = data.news
+
+                laytpl(getTpl).render(noticData, function(html) {
+                    view.innerHTML = html;
+                    clickNewsEvent()
+
+                });
+            }
+        });
+    });
+
+}
+
+var flag = true
+
+
+function watchNode() {
+
+
+    $(document).scroll(function() {
+        var scroH = $(document).scrollTop(); //滚动高度
+
+
+
+        var X = $('.introduce-wrap').offset().top; //元素在当前视窗距离顶部的位置
+
+        if (scroH > X && flag) {
+
+
+            $(".panel").each(function() {
+                $(this).addClass('wow bounce')
+
+                new WOW().init()
+                flag = false
+
+
+            });
+
+
+            $(".spec-slide").each(function() {
+                $(this).removeClass('wow slideInDown')
+
+                // new WOW().init()
+                // flag = false
+
+
+            })
+
+            $('.nav-right').removeClass('wow bounce')
+
+
+        }
+
+
+
+
+
+    })
+
+}

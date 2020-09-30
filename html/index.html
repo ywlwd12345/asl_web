@@ -10,13 +10,336 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
 
     <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/animate.css">
+
+    <!--图标库-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
 
     <!-- <link rel="stylesheet" href="../css/index_mobile.css" media="screen and (max-width: 450px)"> -->
     <script src="../script/rem.js"></script>
     <script src='../script/jquery-1.12.3.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+    <script src="../layui/layui.js"></script>
+    <script src="../script/index.js"></script>
+
+    <!-- 轮播图模板 -->
+
+    <script id="lunbo" type="text/html">
+        {{# layui.each(d, function(index, item){ }}
+
+        <div class="swiper-slide wow slideInDown spec-slide box" data-wow-duration="3s" data-wow-delay="1s">
+
+            <img src="{{'http://'+item.icon}}" alt="">
+
+            <div class="box-content">
+                <h3 class="title">爱生链</h3>
+                <span class="post">Love chain</span>
+                <ul class="icon">
+                    <!-- <li><a href="#"><i class="fa fa-search"></i></a></li>
+                    <li><a href="#"><i class="fa fa-link"></i></a></li> -->
+                </ul>
+            </div>
+
+
+        </div>
+
+        {{# }); }}
+    </script>
+
+
+
 </head>
 
 <body>
+    <header class="amole-header">
+        <div class="nav-wrap">
+            <div class="nav-left">
+                <img src="../images/logo.png" alt="">
+            </div>
+            <div class="nav-right wow bounce" data-wow-duration="2s" data-wow-delay="2s">
+                <ul>
+                    <li><a href="javascript:void(0);">首页</a></li>
+                    <li><a href="javascript:void(0);">关于我们</a></li>
+                    <li><a href="javascript:void(0);">新闻中心</a></li>
+                    <li><a href="javascript:void(0);">众筹荟</a></li>
+                    <li><a href="javascript:void(0);">联系我们</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="swiper-container ">
+        <div class="swiper-wrapper" id="lunboId">
+            <!-- <div class="swiper-slide"><img src="../images/banner1.png" alt=""></div>
+            <div class="swiper-slide"><img src="../images/banner2.png" alt=""></div> -->
+        </div>
+        <!-- 如果需要分页器 -->
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <div class="introduce-wrap">
+        <div class="introduce-wrap-top">
+            <p class="logo-intro"> <img src="../images/xlogo.png" alt=""></p>
+            <p class="text-big">注册爱生链商城 即享批发价</p>
+            <p class="text-small"> 世界爆款产品｜自有供应商品｜国内硬货产品</p>
+        </div>
+
+
+        <div class="introduce-wrap-bottom">
+            <div class="child-top clear">
+                <div class="panel panel1" data-wow-duration="2s">
+                    <p class="panel-img"><img src="../images/one.png" alt=""></p>
+                    <p>爱链生S2B2C社群电商创业</p>
+                    <p>共享平台是未来最具领先的</p>
+                    <p>商业模式</p>
+                </div>
+                <div class="panel panel2 " data-wow-duration="2s">
+                    <p class="panel-img"><img src="../images/two.png" alt=""></p>
+                    <p>爱链生社群电商平台是一个</p>
+                    <p>销售世界爆款与奢侈品的新零售平台 </p>
+                    <p>零售平台 </p>
+
+                </div>
+                <div class="panel panel3 " data-wow-duration="2s">
+                    <p class="panel-img"><img src="../images/three.png" alt=""></p>
+                    <p>整台全球供应商的超级供应</p>
+                    <p>链；严选国内外知名或特色</p>
+                    <p>品牌</p>
+                </div>
+            </div>
+
+
+            <div class="child-bot clear">
+                <div class="panel panel4 " data-wow-duration="2s">
+                    <p class="panel-img"><img src="../images/four.png" alt=""></p>
+                    <p>是线上的精品“沃尔玛”超市；</p>
+                    <p>是一个全开放、全透明、全新</p>
+                    <p>赋能的会员制平台</p>
+                </div>
+
+
+                <div class="panel panel5 " data-wow-duration="2s" data-wow-delay="2s">
+                    <p class="panel-img"><img src="../images/five.png" alt=""></p>
+                    <p>全城托管无囤货一件代发</p>
+                    <p>推广无障碍，努力就有收获</p>
+                </div>
+
+
+            </div>
+
+
+
+
+
+
+        </div>
+    </div>
+
+
+    <div class="advantage-wrap">
+        <div class="advantage-wrap-top">
+            <p class="advantage-img"> <img src="../images/xlogo.png" alt=""></p>
+            <p class="text-big">爱生链的六大优势</p>
+        </div>
+        <div class="advantage-wrap-bot">
+            <div class="swiper-container2">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide ">
+                        <div class="slide-panel1 slide-panel box-lunbo">
+                            <img src="../images/photo_1.png" alt="">
+                            <p>专享批发价</p>
+                            <p>全网最低价，没有中间商赚差价，3000多个全球商品，绝对正品</p>
+                            <div class="box-lunbo-content">
+                                <!-- <h3 class="title">Williamson</h3>
+                                <span class="post">Web designer</span> -->
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slide-panel2 slide-panel box-lunbo">
+                            <img src="../images/photo_2.png" alt="">
+                            <p>100%精品好货</p>
+                            <p>严选国内外知名或特色品牌，是线上的精品“沃尔玛”超市</p>
+                            <div class="box-lunbo-content">
+                                <!-- <h3 class="title">Williamson</h3>
+                                <span class="post">Web designer</span> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="slide-panel3 slide-panel box-lunbo">
+                            <img src="../images/photo_3.png" alt="">
+                            <p>机制开放透明</p>
+                            <p>爱生链严格执行市场机制透明化分润透明</p>
+                            <div class="box-lunbo-content">
+                                <!-- <h3 class="title">Williamson</h3>
+                                <span class="post">Web designer</span> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide ">
+                        <div class="slide-panel4 slide-panel box-lunbo">
+
+                            <img src="../images/photo_4.png" alt="">
+                            <p>活动区限时特惠</p>
+                            <p>爱生链商城首页活动区，每月不定时推出特价且性价比高的产品</p>
+                            <div class="box-lunbo-content">
+                                <!-- <h3 class="title">Williamson</h3>
+                                <span class="post">Web designer</span> -->
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slide-panel5 slide-panel box-lunbo">
+                            <img src="../images/photo_5.png" alt="">
+                            <p>会员积分日</p>
+                            <p>每月的18日为会员积分日当天会推出部分产品可使用ASL 抵扣</p>
+                            <div class="box-lunbo-content">
+                                <!-- <h3 class="title">Williamson</h3>
+                                <span class="post">Web designer</span> -->
+                            </div>
+
+
+
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="slide-panel6 slide-panel box-lunbo">
+                            <img src="../images/photo_6.png" alt="">
+                            <p>店主区好货</p>
+                            <p>普通会员通过购买店主区产品可直接升级成为店主</p>
+                            <div class="box-lunbo-content">
+                                <!-- <h3 class="title">Williamson</h3>
+                                <span class="post">Web designer</span> -->
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+
+                <!-- 如果需要导航按钮 -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+
+            </div>
+
+
+
+        </div>
+    </div>
+
+
+    <div class="news-wrap">
+        <div class="news-wrap-top">
+            <p class="logo-intro"> <img src="../images/xlogo.png" alt=""></p>
+            <p class="text-big">新闻动态</p>
+        </div>
+        <div class="news-wrap-bot">
+            <div class="news-panel clear hover_area_10">
+                <div class="news-left hover_img_10">
+                    <img src="../images/xxzx.png" alt="">
+                    <div class="hover_overlay_10"></div>
+                    <div class="hover_content_10"></div>
+                </div>
+                <div class="news-right ">
+                    <p class="news-title">学习中心</p>
+                    <p class="news-desc">【推荐】爱生链视频讲解第一期</p>
+                    <p class="news-push">【推荐】爱生链视频讲解第一期</p>
+                    <p class="btn-wrap"><span class='typeid1'>更多 ></span></p>
+                </div>
+
+            </div>
+
+
+            <div class="news-panel clear hover_area_10">
+                <div class="news-left hover_img_10">
+                    <img src="../images/scdt.png" alt="">
+                    <div class="hover_overlay_10"></div>
+                    <div class="hover_content_10"></div>
+                </div>
+                <div class="news-right">
+                    <p class="news-title">市场动态</p>
+                    <p class="news-desc">【推荐】爱生链徐州市场资源对接会圆满成功</p>
+                    <p class="news-push">3月15日下午，爱生链资源对接会在徐州米兰花大酒店顺利召开,本次会议取得了圆满的成功。</p>
+                    <p class="btn-wrap"><span class='typeid2'>更多 ></span></p>
+                </div>
+
+            </div>
+
+
+            <div class="news-panel clear hover_area_10">
+                <div class="news-left hover_img_10">
+                    <img src="../images/bktj.png" alt="">
+                    <div class="hover_overlay_10"></div>
+                    <div class="hover_content_10"></div>
+                </div>
+                <div class="news-right">
+                    <p class="news-title">爆款推荐</p>
+                    <p class="news-desc">【推荐】生命保护伞一双康国肽</p>
+                    <p class="news-push">上个世纪90年代后期,多肽类功能食品在国外发展速度极快,全世界多肽的研究逐渐成为人们关注的热点并不断发展为独立的学科。</p>
+                    <p class="btn-wrap"><span class='typeid3'>更多 ></span></p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+    <footer class="foot">
+
+        <div class="foot-top ">
+            <div class="foot-top-wrap clear">
+                <div class="left">
+                    <img src="../images/d-logo.png" alt="">
+                    <div class="foot-desc-text"><span>爱生链共享服务有限公司</span></div>
+                </div>
+
+                <div class="right">
+                    <img src="../images/d-ewm.png" alt="">
+                    <div class="foot-desc-text"><span>扫一扫关注爱生链公众号</span></div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="foot-bot">
+
+            <span class="foot-span-spec">客服：400-8567-085 </span>
+            <span>爱生链共享服务有限公司 | 鲁ICP备19061387号 | 食品经营许可证: JY13704810138371 | 鲁枣食药监械经营备20200072号 </span>
+
+
+
+        </div>
+
+
+
+
+    </footer>
+
+
+
+
+
+
+
+
+
 
 
 
@@ -24,33 +347,45 @@
 
 
 </body>
+
+
+
+
+
+
 <script>
-    var mySwiper = new Swiper('.swiper-container', {
-        slidesPerView: 3,
-        spaceBetween: 30,
-        // 如果需要分页器
-        pagination: {
-            el: '.swiper-pagination',
-            bulletClass: 'my-bullet'
-        },
-
-        // 如果需要前进后退按钮
-        // navigation: {
-        //   nextEl: '.swiper-button-next',
-        //   prevEl: '.swiper-button-prev',
-        // }
-    })
-
-    function swiperBtnClick(falg) {
-        if (falg) {
-            mySwiper.slidePrev();
-        } else {
-            mySwiper.slideNext();
-        }
-    }
+    $(function() {
+        renderLunbo()
+            // getNews()
+        clickEvent()
+        watchNode()
+    });
 </script>
 
+
 <script>
+    var mySwiper2 = new Swiper('.swiper-container2', {
+        direction: 'horizontal', // 垂直切换选项
+        slidesPerView: 3,
+        effect: 'coverflow',
+        // loop: true,
+        // autoplay: true,
+        centeredSlides: false,
+        // 如果需要前进后退按钮
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+
+
+
+
+    })
+</script>
+
+<script src="../script/wow.min.js"></script>
+<script>
+    new WOW().init()
 </script>
 
 
