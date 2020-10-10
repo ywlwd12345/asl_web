@@ -7,18 +7,19 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>爱生链官网</title>
     <link rel="stylesheet" href="../../css/index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css"> -->
     <link rel="stylesheet" href="../../css/main.css">
-    <!-- <link rel="stylesheet" href="../css/news.css"> -->
+    <link rel="stylesheet" href="../../css/animate.css">
 
+    <!--图标库-->
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"> -->
+    <link rel="stylesheet" href="../../css/font_all.css">
 
-
-
-
-    <!-- <link rel="stylesheet" href="../../css/index_mobile.css" media="screen and (max-width: 450px)"> -->
+    <link rel="stylesheet" href="../../css/index_mobile.css" media="screen and (max-width: 450px)">
     <script src="../../script/rem.js"></script>
     <script src='../../script/jquery-1.12.3.min.js'></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script> -->
+
     <script src="../../layui/layui.js"></script>
     <script src="../../script/index.js"></script>
 
@@ -37,8 +38,10 @@
             <img src="{{'http://'+item.image}}" alt="">
         </div>
         <div class="news-right">
-            <p class="news-title">{{item.title}}</p>
-            <p class="news-desc">{{item.describe}}</p>
+            <div class="pos-panel">
+                <p class="news-title">{{item.title}}</p>
+                <p class="news-desc">{{item.describe}}</p>
+            </div>
         </div>
     </div>
 
@@ -46,7 +49,7 @@
 </script>
 
 <body>
-    <header class="amole-header">
+    <!-- <header class="amole-header">
         <div class="nav-wrap">
             <div class="nav-left">
                 <img src="../../images/logo.png" alt="">
@@ -61,7 +64,7 @@
                 </ul>
             </div>
         </div>
-    </header>
+    </header> -->
 
     <div class="news-wrap">
         <div class="news-wrap-top">

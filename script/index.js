@@ -166,6 +166,7 @@ var flag = true
 function watchNode() {
 
 
+
     $(document).scroll(function() {
         var scroH = $(document).scrollTop(); //滚动高度
 
@@ -176,13 +177,11 @@ function watchNode() {
         if (scroH > X && flag) {
 
 
+
             $(".panel").each(function() {
                 $(this).addClass('wow bounce')
-
                 new WOW().init()
                 flag = false
-
-
             });
 
 
@@ -195,7 +194,7 @@ function watchNode() {
 
             })
 
-            $('.nav-right').removeClass('wow bounce')
+
 
 
         }
@@ -204,6 +203,89 @@ function watchNode() {
 
 
 
+    })
+
+}
+
+
+
+//监听导航栏的点击事件 用于滚动
+
+function watchNavClick() {
+    $('.ul-nav').find('li').each(function(key, item) {
+        $(this).on('click', function(e) {
+            var id = parseInt($(this).attr('data-id'))
+
+            $(this).children().addClass("active-a")
+
+            $(this).siblings().children("a").removeClass('active-a')
+
+
+            idScrollToPosition(id)
+
+
+
+        })
+
+
+
+    })
+}
+
+
+//根据id 滚动到指定位置
+
+function idScrollToPosition(id) {
+    switch (true) {
+        case id === 1:
+            $("html,body").animate({
+                scrollTop: 0
+            }, 1000);
+
+            break;
+        case id === 2 || id === 5:
+            $("html,body").animate({
+                scrollTop: $(".foot").offset().top
+            }, 1500);
+            break;
+        case id === 3:
+            $("html,body").animate({
+                scrollTop: $(".news-wrap").offset().top
+            }, 1500);
+
+            break;
+        case id === 4:
+            $("html,body").animate({
+                scrollTop: $(".introduce-wrap").offset().top
+            }, 800);
+            break;
+        default:
+
+    }
+
+
+}
+
+
+
+//禁止缩放函数
+function onTwoFingers() {
+    document.addEventListener('touchstart', function(event) {
+        if (event.touches.length > 1) {
+            event.preventDefault();
+        }
+    }, {
+        passive: false
+    })
+    var lastTouchEnd = 0;
+    document.addEventListener('touchend', function(event) {
+        var now = (new Date()).getTime();
+        if (now - lastTouchEnd <= 300) {
+            event.preventDefault();
+        }
+        lastTouchEnd = now;
+    }, {
+        passive: false
     })
 
 }

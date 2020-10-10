@@ -7,27 +7,29 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>爱生链官网</title>
     <link rel="stylesheet" href="../css/index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css"> -->
+    <link rel="stylesheet" href="../css/swiper.min.css">
 
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/animate.css">
 
     <!--图标库-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"> -->
+    <link rel="stylesheet" href="../css/font_all.css">
 
-    <!-- <link rel="stylesheet" href="../css/index_mobile.css" media="screen and (max-width: 450px)"> -->
+    <link rel="stylesheet" href="../css/index_mobile.css" media="screen and (max-width: 450px)">
     <script src="../script/rem.js"></script>
     <script src='../script/jquery-1.12.3.min.js'></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script> -->
+    <script src='../script/swiper.min.js'></script>
     <script src="../layui/layui.js"></script>
     <script src="../script/index.js"></script>
-
     <!-- 轮播图模板 -->
 
     <script id="lunbo" type="text/html">
         {{# layui.each(d, function(index, item){ }}
 
-        <div class="swiper-slide wow slideInDown spec-slide box" data-wow-duration="3s" data-wow-delay="1s">
+        <div class="swiper-slide wow slideInDown spec-slide box" data-wow-duration="2s" data-wow-delay="1s">
 
             <img src="{{'http://'+item.icon}}" alt="">
 
@@ -52,21 +54,23 @@
 
 <body>
     <header class="amole-header">
-        <div class="nav-wrap">
+        <div class="nav-wrap clear">
             <div class="nav-left">
                 <img src="../images/logo.png" alt="">
             </div>
-            <div class="nav-right wow bounce" data-wow-duration="2s" data-wow-delay="2s">
-                <ul>
-                    <li><a href="javascript:void(0);">首页</a></li>
-                    <li><a href="javascript:void(0);">关于我们</a></li>
-                    <li><a href="javascript:void(0);">新闻中心</a></li>
-                    <li><a href="javascript:void(0);">众筹荟</a></li>
-                    <li><a href="javascript:void(0);">联系我们</a></li>
+            <div class="nav-right">
+                <ul class="ul-nav">
+                    <li data-id="1"><a href="javascript:void(0);" class="active-a">首页</a></li>
+                    <li data-id="2"><a href="javascript:void(0);">关于我们</a></li>
+                    <li data-id="3"><a href="javascript:void(0);">新闻中心</a></li>
+                    <li data-id="4"><a href="javascript:void(0);">众筹荟</a></li>
+                    <li data-id="5"><a href="javascript:void(0);">联系我们</a></li>
                 </ul>
             </div>
         </div>
     </header>
+    <div class="column"></div>
+
     <div class="swiper-container ">
         <div class="swiper-wrapper" id="lunboId">
             <!-- <div class="swiper-slide"><img src="../images/banner1.png" alt=""></div>
@@ -143,7 +147,7 @@
         <div class="advantage-wrap-bot">
             <div class="swiper-container2">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide ">
+                    <div class="swiper-slide">
                         <div class="slide-panel1 slide-panel box-lunbo">
                             <img src="../images/photo_1.png" alt="">
                             <p>专享批发价</p>
@@ -251,10 +255,12 @@
                     <div class="hover_content_10"></div>
                 </div>
                 <div class="news-right ">
-                    <p class="news-title">学习中心</p>
-                    <p class="news-desc">【推荐】爱生链视频讲解第一期</p>
-                    <p class="news-push">【推荐】爱生链视频讲解第一期</p>
-                    <p class="btn-wrap"><span class='typeid1'>更多 ></span></p>
+                    <div class="pos-panel">
+                        <p class="news-title">学习中心</p>
+                        <p class="news-desc">【推荐】爱生链视频讲解第一期</p>
+                        <p class="news-push">【推荐】爱生链视频讲解第一期</p>
+                        <p class="btn-wrap"><span class='typeid1'>更多 ></span></p>
+                    </div>
                 </div>
 
             </div>
@@ -267,10 +273,12 @@
                     <div class="hover_content_10"></div>
                 </div>
                 <div class="news-right">
-                    <p class="news-title">市场动态</p>
-                    <p class="news-desc">【推荐】爱生链徐州市场资源对接会圆满成功</p>
-                    <p class="news-push">3月15日下午，爱生链资源对接会在徐州米兰花大酒店顺利召开,本次会议取得了圆满的成功。</p>
-                    <p class="btn-wrap"><span class='typeid2'>更多 ></span></p>
+                    <div class="pos-panel">
+                        <p class="news-title">市场动态</p>
+                        <p class="news-desc">【推荐】爱生链徐州市场资源对接会圆满成功</p>
+                        <p class="news-push">3月15日下午，爱生链资源对接会在徐州米兰花大酒店顺利召开,本次会议取得了圆满的成功。</p>
+                        <p class="btn-wrap"><span class='typeid2'>更多 ></span></p>
+                    </div>
                 </div>
 
             </div>
@@ -278,15 +286,18 @@
 
             <div class="news-panel clear hover_area_10">
                 <div class="news-left hover_img_10">
+
                     <img src="../images/bktj.png" alt="">
                     <div class="hover_overlay_10"></div>
                     <div class="hover_content_10"></div>
                 </div>
                 <div class="news-right">
-                    <p class="news-title">爆款推荐</p>
-                    <p class="news-desc">【推荐】生命保护伞一双康国肽</p>
-                    <p class="news-push">上个世纪90年代后期,多肽类功能食品在国外发展速度极快,全世界多肽的研究逐渐成为人们关注的热点并不断发展为独立的学科。</p>
-                    <p class="btn-wrap"><span class='typeid3'>更多 ></span></p>
+                    <div class="pos-panel">
+                        <p class="news-title">爆款推荐</p>
+                        <p class="news-desc">【推荐】生命保护伞一双康国肽</p>
+                        <p class="news-push">上个世纪90年代后期,多肽类功能食品在国外发展速度极快,全世界多肽的研究逐渐成为人们关注的热点并不断发展为独立的学科。</p>
+                        <p class="btn-wrap"><span class='typeid3'>更多 ></span></p>
+                    </div>
                 </div>
 
             </div>
@@ -308,7 +319,7 @@
                 </div>
 
                 <div class="right">
-                    <img src="../images/d-ewm.png" alt="">
+                    <img src="../images/d-ewm.jpg" alt="" width="101" height="101">
                     <div class="foot-desc-text"><span>扫一扫关注爱生链公众号</span></div>
                 </div>
 
@@ -359,6 +370,8 @@
             // getNews()
         clickEvent()
         watchNode()
+        watchNavClick() //监听导航栏的点击事件
+        onTwoFingers() //禁止缩放函数
     });
 </script>
 

@@ -3,6 +3,13 @@
     height: 110px;
     background: #fff;
     border-bottom: 1px solid #eee;
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+}
+
+.column {
+    height: 110px;
 }
 
 .nav-wrap {
@@ -44,15 +51,22 @@
     transition: all 0.5s;
 }
 
-.nav-right a:hover {
+
+/* .nav-right a:hover {
+    border-bottom: 2px solid #EA0E10;
+    color: #EA0E10;
+} */
+
+.active-a {
     border-bottom: 2px solid #EA0E10;
     color: #EA0E10;
 }
 
-.nav-right li:nth-child(1) a {
+
+/* .nav-right li:nth-child(1) a {
     border-bottom: 2px solid #EA0E10;
     color: #EA0E10;
-}
+} */
 
 .swiper-container {
     width: 100%;
